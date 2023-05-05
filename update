@@ -1,0 +1,10 @@
+#update
+list = ['book_title','price','published_year','category','quantity','total_sales','book_status','book_type','publisher_id','customer_id','transaction_id','authors_id']
+isbn = input("enter isbn")
+for id in list:
+    change = input("do u wanna change " + id +" ?")
+    if change == "y":
+        changer = input("insert the new value:")
+        %sql update books set {id} = {changer} where isbn_number = {isbn}
+    else:
+        print("Book was not updated")
