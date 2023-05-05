@@ -1,0 +1,14 @@
+# EDIT
+
+fields = ['book_title','price','published_year','category','quantity','total_sales','book_status','book_type','publisher_id','customer_id','transaction_id','authors_id']
+isbn = input("Enter ISBN Number You Want To Edit: ")
+
+for field in fields:
+    change = input(f"Do you want to change {field}? ")
+    if change.lower() == "y":
+        changer = input("Insert the new value: ")
+        query = f"UPDATE books SET {field} = '{changer}' WHERE isbn_number = '{isbn}'"
+        %sql $query
+        %sql COMMIT
+    else:
+        print("No change made.")
